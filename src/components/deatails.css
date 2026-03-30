@@ -1,0 +1,49 @@
+
+@media(max-width:768px){
+   .deatails-page .responsive-table thead{
+        display: none;
+    }
+   .deatails-page .responsive-table,
+    .responsive-table tbody,
+    .responsive-table tr,
+    .responsive-table td{
+        display: block;
+        width: 100%;
+    }
+  .deatails-page  .responsive-table tr{
+        margin-bottom: 15px;
+        background: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .deatails-page .responsive-table td{
+        position: relative;
+        text-align: center;
+        padding-left: 50%;
+        
+    }
+    .deatails-page .responsive-table td::before{
+        content:attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 50%;
+        text-align: left;
+        font-weight: 600;
+
+    }
+    .deatails-page .responsive-table td:last-child{
+        text-align: left;
+        padding: 0;
+    }
+   .deatails-page .action-buttons{
+        display: flex;
+        gap: 10px;
+    }
+   .deatails-page .action-buttons .btn{
+        flex: 1;
+    }
+   .deatails-page .responsive-table td:last-child::before{
+        display: none;
+    }
+}

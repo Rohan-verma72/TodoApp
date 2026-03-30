@@ -1,0 +1,45 @@
+
+.home-left,
+.home-right {
+  padding: 20px;
+}
+
+.home-left img {
+  width: 100%;
+  height: auto;
+}
+
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column !important;
+  }
+
+  .home-left,
+  .home-right {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .home-right {
+    margin-top: 30px;
+  }
+
+  .home-left img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-left img {
+    height: 150px;
+  }
+
+  .fs-1 {
+    font-size: 1.5rem !important;
+  }
+
+  .fs-3 {
+    font-size: 1rem !important;
+  }
+}

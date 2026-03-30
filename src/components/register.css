@@ -1,0 +1,32 @@
+.register-page{
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+
+    
+}
+.register-page form{
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    transition: 0.3s ease;
+}
+.register-page form:hover{
+    transform: translate(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+.register-page h4{
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+@media(max-width: 768){
+    .register-page form{
+        width: 90%;
+        padding: 20px;
+    }
+}

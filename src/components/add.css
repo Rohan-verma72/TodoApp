@@ -1,0 +1,31 @@
+.add-page{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+
+}
+.add-page textarea{
+    min-height: 100px;
+    max-height: 200px;
+    resize: vertical;
+}
+.add-page .card{
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+}
+@media(max-width:768px){
+    .add-page{
+        margin-top: 30px;
+        padding: 10px;
+    }
+    .add-page.card{
+        padding: 20px;
+    }
+    .add-page.d-flex{
+        flex-direction: column;
+    }
+    .add-page.btn{
+        width: 100%;
+    }
+}
