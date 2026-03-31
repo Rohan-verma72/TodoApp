@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "api": "npx json-server db.json --watch",
-    "start-api": "json-server db.json --port $PORT --host 0.0.0.0"
+    "start-api": "json-server db.json --port 10000 --host 0.0.0.0",
+    "api-prod": "json-server db.json --host 0.0.0.0 --port ${PORT:-10000}"
   },
   "dependencies": {
     "json-server": "^1.0.0-beta.5",
