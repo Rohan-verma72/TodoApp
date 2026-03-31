@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { useCookies } from "react-cookie"
 import { useNavigate, useParams, Link } from "react-router-dom";
 import './edit.css';
+import { API_URL } from "../api";
 
 export function Edit(){
 
@@ -15,7 +16,7 @@ export function Edit(){
     const[appointment, setAppointment]=useState({user_id:null, title:null, description:null, });
 
     function loadData(){
-        axios.get(`http://localhost:3000/appointments/${params.id}`)
+        axios.get(`${API_URL}/appointments/${params.id}`)
         .then(response=>{
             setAppointment(response.data);
         })
@@ -32,7 +33,7 @@ export function Edit(){
             user_id:cookie["userid"]
         },
         onSubmit:(appointment)=>{
-            axios.put(`http://localhost:3000/appointments/${params.id}`,appointment)
+            axios.put(`${API_URL}/appointments/${params.id}`,appointment)
             .then(()=>{
                 console.log("Saved...")
             });

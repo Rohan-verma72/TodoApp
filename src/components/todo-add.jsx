@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useFormik } from "formik";
-import { Cookies, useCookies } from "react-cookie";
+import { useCookies } from "react-cookie";
 import { useNavigate, Link } from "react-router-dom";
 import './add.css';
+import { API_URL } from "../api";
 
 export function Add() {
   const [cookies ] = useCookies([
@@ -18,7 +19,7 @@ export function Add() {
       user_id: cookies["userid"],
     },
     onSubmit: (appointment) => {
-      axios.post(`http://localhost:3000/appointments`, appointment).then(() => {
+      axios.post(`${API_URL}/appointments`, appointment).then(() => {
         console.log("Appointment Added");
       });
       alert("Appointment Addedd SuccesFully");

@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import { useNavigate, Link } from "react-router-dom";
 import './register.css';
 import * as yup from "yup";
+import { API_URL } from "../api";
 
 export function Register(props) {
   let navigate = useNavigate();
@@ -17,7 +18,7 @@ export function Register(props) {
     },
     
     onSubmit: (user) => {
-      axios.post(`http://localhost:3000/users`, user).then(() => {
+      axios.post(`${API_URL}/users`, user).then(() => {
         console.log('Registered');
          alert("Registered Successfully..");
          console.log(user);

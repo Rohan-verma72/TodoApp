@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import { useNavigate, useParams, Link } from "react-router-dom";
 import './delete.css';
+import { API_URL } from "../api";
 
 export function Delete(){
 
@@ -12,7 +13,7 @@ export function Delete(){
     const[appointment, setAppointment]=useState({userid:null, title:null, disdescription:null, date:null});
 
     useEffect(()=>{
-        axios.get(`http://localhost:3000/appointments/${params.id}`)
+        axios.get(`${API_URL}/appointments/${params.id}`)
         .then(response=>{
             setAppointment(response.data);
         })
@@ -21,7 +22,7 @@ export function Delete(){
         function handleDeleteClick(){
             var confirm = window.confirm('Are you Sure?\nWant To Delete');
             if(confirm === true){
-                axios.delete(`http://localhost:3000/appointments/${params.id}`)
+                axios.delete(`${API_URL}/appointments/${params.id}`)
                 .then(()=>{
                     console.log('Deleted')});
                     navigate("/dashboard");

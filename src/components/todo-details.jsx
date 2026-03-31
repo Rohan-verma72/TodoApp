@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from "react"
 import { useCookies } from "react-cookie";
 import { Link, Outlet, useOutletContext } from "react-router-dom";
 import './deatails.css';
+import { API_URL } from "../api";
 
 export function Details(){
 
@@ -28,7 +29,7 @@ else{
 },[UserAppointments, searchString]);
 
 const LoadAppointments=useCallback(()=>{
-    axios.get(`http://localhost:3000/appointments`)
+    axios.get(`${API_URL}/appointments`)
     .then(response=>{
         setAppointments(response.data);
     })

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import './login.css';
+import { API_URL } from "../api";
 
 export function Login(props) {
   const [users, setUsers] = useState([
@@ -15,7 +16,7 @@ export function Login(props) {
   const [cookie, setCookie, removeCookie] = useCookies(["userid", "username"]);
 
   function LoadUser() {
-    axios("http://localhost:3000/users").then(response => {
+    axios(`${API_URL}/users`).then(response => {
       setUsers(response.data);
     })
     
